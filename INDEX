@@ -1,0 +1,5 @@
+error.correction        Estimate sequencing errors and compute
+                        corrected counts
+extract.lib             Functions for SAGE library extraction
+sage.library            Class sage.library
+sage.test               Compare Two SAGE Libraries
