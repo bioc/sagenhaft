@@ -25,7 +25,9 @@ extract.lib.from.directory <- function(dirname, libname=basename(dirname), patte
   base.caller.format <- rep("phd", length(filelist))
   base.caller.format[grep("\.seq$", filelist)] <- "seq"
   lib <- extract.library.tags(filelist, base.caller.format=base.caller.format, ...)
+  if(!nrow(lib$seqs)>0) stop("No tags found in sequence files!")
   lib <- compute.unique.tags(lib)
+  if(!nrow(lib$tags)>0) stop("Error in finding unique tags!")
   lib$libname <- libname
   lib <- estimate.errors.mean(lib)
   lib <- em.estimate.error.given(lib, ...)
@@ -320,10 +322,12 @@ em.estimate.error.given<-function(lib, maxstep=50, ...) {
       break
     }
   }
-  lib$comment <- c(lib$comment,
-                   paste("# EM steps:", i, sep=" "),
-                   paste(c("# likelihood (every 10 steps):", round(l[c(1,seq(10,i-1,10),i)],1)), collapse=" "),
-                   paste(c("# var (every 10 steps):", round(v[c(1,seq(10,i-1,10),i)],1)), collapse=" "))
+  if(i>10) {
+    lib$comment <- c(lib$comment,
+                     paste("# EM steps:", i, sep=" "),
+                     paste(c("# likelihood (every 10 steps):", round(l[c(1,seq(10,i-1,10),i)],1)), collapse=" "),
+                     paste(c("# var (every 10 steps):", round(v[c(1,seq(10,i-1,10),i)],1)), collapse=" "))
+  }
   lib$likelihood <- l[1:i]
   lib$var <- v[1:i]
   names(m) <- NULL
@@ -730,7 +734,7 @@ create.matrix.csr <- function(values, row.indices, col.indices, dim=NULL, eps = 
   ja <- as.integer(col.indices[o])
   if(is.null(dim)) dim <- c(max(ia), max(ja))
   library(SparseM)
-  return(as.matrix.csr(new("matrix.coo", ra=ra, ia=ia, ja=ja, dim=dim)))
+  return(as.matrix.csr(new("matrix.coo", ra=ra, ia=ia, ja=ja, dimension=dim)))
 }
 
 table.sparse <- function(..., exclude = c(NA, NaN), dnn = list.names(...), deparse.level = 1) {
