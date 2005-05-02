@@ -14,7 +14,7 @@
 \newcommand{\Rfunction}[1]{{\texttt{#1}}}
 \newcommand{\Rpackage}[1]{{\textit{#1}}}
 
-\usepackage{/usr/local/lib/R/share/texmf/Sweave}
+\usepackage{c:/Programme/R/rw2010/share/texmf/Sweave}
 \begin{document}
 \author{Tim Beissbarth}
 
@@ -124,8 +124,9 @@ old C57/BL6 mice.
 > library(sagenhaft)
 \end{Sinput}
 \begin{Soutput}
-Loading required package: SparseM 
+Loading required package: SparseM
 [1] "SparseM library loaded"
+
 \end{Soutput}
 \end{Schunk}
 
@@ -171,6 +172,7 @@ contents of field 'tags':
 tag count.raw a c g t avg.ditaglength avg.error.score count.adjusted prop.estimate
 contents of field 'seqs':
 seq seqextra q1 q2 q3 q4 q5 q6 q7 q8 q9 q10 ditaglength file
+
 \end{Soutput}
 \begin{Sinput}
 > B6Hypo <- read.sage.library(system.file("data/B6HypothalHFI.sage", 
@@ -225,6 +227,7 @@ Fields:
 name ntag taglength data comment
 contents of field 'data':
 tag A.adjusted count1.raw count2.raw M.raw tests.raw count1.adjusted count2.adjusted M.adjusted tests.adjusted
+
 \end{Soutput}
 \end{Schunk}
 

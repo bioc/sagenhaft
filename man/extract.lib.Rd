@@ -8,6 +8,7 @@
 \alias{read.phd.file}
 \alias{read.seq.qual.filepair}
 \alias{extract.ditags}
+\alias{reestimate.lib.from.tagcounts}
 \alias{SAGEartifacts}
 \title{Functions for SAGE library extraction}
 \description{
@@ -27,6 +28,7 @@ extract.library.tags(filelist, base.caller.format="phd",
                      max.ditag.length=(2*taglength+4),
                      cut.site="catg", default.quality=NA, verbose=TRUE,
                      ...) 
+reestimate.lib.from.tagcounts(tagcounts, libname, default.quality=20, ...) 
 compute.unique.tags(lib)
 combine.libs(..., artifacts=c("Linker", "Ribosomal", "Mitochondrial"))
 remove.sage.artifacts(lib,
@@ -66,6 +68,7 @@ extract.ditags(sequence, taglength=10, filename=NA,
     returned by read.phd.file or read.seq.qual.filepair}
   \item{artifacts}{Types of artificially generated tags to remove.}
   \item{\dots}{Arguments passed on to extraction functions.}
+  \item{tagcounts}{Tagcounts from library. Integer Vecotor with Tag sequences as names.}
 }
 \value{
   \code{lib} returns an SAGE library object.
