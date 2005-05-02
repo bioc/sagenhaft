@@ -35,6 +35,34 @@ extract.lib.from.directory <- function(dirname, libname=basename(dirname), patte
   return(lib)
 }
 
+reestimate.lib.from.tagcounts <- function(tagcounts, libname, default.quality=20, ...) {
+  if(is.character(tagcounts)) { tmp <- tagcounts; tagcounts <- integer(length(tagcounts))+1; names(tagcounts)<-tmp }
+  if(!is.numeric(tagcounts)) stop("Tagcounts needs to be a numeric vector with tagsequences as names or character vector of tagsequences in library!")
+  if(!is.character(names(tagcounts))) stop("Tagcounts needs to have names giving the tag sequences!")
+  taglength = unique(nchar(names(tagcounts)))
+  if(length(taglength)!=1) stop("All tag sequences need to be of same lengths!")
+  tagnames <- names(tagcounts)
+  tagcounts <- as.integer(tagcounts)
+  tags <- rep.int(tagnames, tagcounts)
+  if(!length(tags)>0) stop("No tags found!")
+  error.scores <- matrix(default.quality, nrow=length(tags), ncol=taglength)
+  colnames(error.scores) <- paste("q", 1:taglength, sep="")
+  seqs <- data.frame(seq=I(tags), seqextra=I(sample(c("a","c","g","t"),length(tags),TRUE)), error.scores,
+                     ditaglength=rep(NA,length(tags)), file=I(rep("",length(tags))))
+  comment <- c(paste("# date:", date(), sep=" "),
+               "# base.calling.method: Unknown",
+               paste("# default.quality:", default.quality, sep=" "),
+               )
+  lib <- list(libname, taglength=taglength, seqs=seqs, comment=comment)
+  class(lib) <- "sage.library"
+  lib <- compute.unique.tags(lib)
+  if(!nrow(lib$tags)>0) stop("Error in finding unique tags!")
+  lib <- estimate.errors.mean(lib)
+  lib <- em.estimate.error.given(lib, ...)
+  lib <- remove.sage.artifacts(lib, ...)
+  return(lib)
+}
+
 combine.libs<-function(..., artifacts=c("Linker", "Ribosomal", "Mitochondrial")) {
   arglist <- list(...)
   if(length(arglist) < 2) stop("Less than two libraries to combine!")
