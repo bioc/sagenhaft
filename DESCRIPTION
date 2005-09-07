@@ -12,6 +12,7 @@ Description: This package implements several functions useful for
         analysis of SAGE (Serial Analysis of Gene Expressen) data,
         i.e. extraction of a SAGE library from sequence files,
         sequence error correction, library comparison.
+biocViews: SAGE
 License: GPL version 2 or newer
 URL: http://tagcalling.mbgproject.org
 
