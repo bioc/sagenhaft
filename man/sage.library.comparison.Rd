@@ -13,7 +13,7 @@
 }
 \usage{
 read.sage.library.comparison(file)
-write.sage.library.comparison(x, file=paste(lib\$libname, "sage", sep="."))
+write.sage.library.comparison(x, file=paste(lib$libname, "sagecomp", sep="."))
 compare.lib.pair(lib1, lib2) 
 }
 \arguments{

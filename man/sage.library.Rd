@@ -11,7 +11,7 @@
 }
 \usage{
 read.sage.library(file)
-write.sage.library(x, file=paste(x\$libname, "sage", sep="."),
+write.sage.library(x, file=paste(x$libname, "sage", sep="."),
                    what="complete") 
 }
 \arguments{
