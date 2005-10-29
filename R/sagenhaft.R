@@ -368,7 +368,7 @@ em.estimate.error.given<-function(lib, maxstep=50, ...) {
 
 # simulation of SAGE libraries
 
-simulate.library<-function(taglength=4, lambda=1000, mean.error=0.01, error.sd=1, withintagerror.sd=0.2,
+sagelibrary.simulate<-function(taglength=4, lambda=1000, mean.error=0.01, error.sd=1, withintagerror.sd=0.2,
                       ngenes=min(4^taglength, 100000), base.lib=NULL, libseed=-1, ...) {
   #maybe better mean.real=0.0002559957 median.real=0.0001584893 sd.accross=2.288200 sd.within=0.9313946
 
