@@ -19,11 +19,11 @@ extract.lib.from.zip <- function(zipfile, libname=sub(".zip","",basename(zipfile
   return(lib)
 }
 
-extract.lib.from.directory <- function(dirname, libname=basename(dirname), pattern="(\.phd\.1$)|(\.seq$)", ...) {
+extract.lib.from.directory <- function(dirname, libname=basename(dirname), pattern="(\\.phd\\.1$)|(\\.seq$)", ...) {
   filelist <- dir(dirname, pattern, full.names=TRUE)  
   if(length(filelist)==0) { stop("No files!") }
   base.caller.format <- rep("phd", length(filelist))
-  base.caller.format[grep("\.seq$", filelist)] <- "seq"
+  base.caller.format[grep("\\.seq$", filelist)] <- "seq"
   lib <- extract.library.tags(filelist, base.caller.format=base.caller.format, ...)
   if(!nrow(lib$seqs)>0) stop("No tags found in sequence files!")
   lib <- compute.unique.tags(lib)
@@ -186,10 +186,10 @@ read.phd.file <- function(file) {
 }
 
 read.seq.qual.filepair <- function(file, default.quality=NA) { 
-  lines <- readLines(sub("\.[^\.]*$", ".seq", file))
-  if(length(lines) < 1) { stop(paste("File missing or wrong format:", sub("\.[^\.]*$", ".seq", file))); }
+  lines <- readLines(sub("\\.[^\.]*$", ".seq", file))
+  if(length(lines) < 1) { stop(paste("File missing or wrong format:", sub("\\.[^\.]*$", ".seq", file))); }
   dna<-unlist(strsplit(gsub("[^A-Za-z]","", paste(lines[-1], collapse="")), ""))
-  qfile <- sub("\.[^\.]*$", ".qual", file)
+  qfile <- sub("\\.[^\.]*$", ".qual", file)
   if(file.access(qfile, 4)==-1) {
     if(is.na(default.quality)) {
       stop(paste("File unreadable or missing:", qfile));
