@@ -18,9 +18,9 @@
 }
 \usage{
 extract.lib.from.zip(zipfile, libname=sub(".zip","",basename(zipfile)),
-                     ...) 
+                     ...)
 extract.lib.from.directory(dirname, libname=basename(dirname),
-                           pattern="(\.phd\.1\$)|(\.seq\$)", ...)
+                           pattern, ...)
 extract.library.tags(filelist, base.caller.format="phd",
                      remove.duplicate.ditags=TRUE, 
                      remove.N=FALSE, remove.low.quality=10,
@@ -93,11 +93,11 @@ extract.ditags(sequence, taglength=10, filename=NA,
   \code{\link[sagenhaft:error.correction]{error.correction}}}
 
 \examples{
-library(sagenhaft)
-file.copy(system.file("data/E15postHFI.zip",package="sagenhaft"),
-          "E15postHFI.zip")
-E15post<-extract.lib.from.zip("E15postHFI.zip", taglength=10,
-                              min.ditag.length=20, max.ditag.length=24)
-E15post
+#library(sagenhaft)
+#file.copy(system.file("data/E15postHFI.zip",package="sagenhaft"),
+#          "E15postHFI.zip")
+#E15post<-extract.lib.from.zip("E15postHFI.zip", taglength=10,
+#                              min.ditag.length=20, max.ditag.length=24)
+#E15post
 }
 \keyword{manip}
