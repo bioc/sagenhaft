@@ -51,7 +51,7 @@ reestimate.lib.from.tagcounts <- function(tagcounts, libname, default.quality=20
                      ditaglength=rep(NA,length(tags)), file=I(rep("",length(tags))))
   comment <- c(paste("# date:", date(), sep=" "),
                "# base.calling.method: Unknown",
-               paste("# default.quality:", default.quality, sep=" "),
+               paste("# default.quality:", default.quality, sep=" ")
                )
   lib <- list(libname, taglength=taglength, seqs=seqs, comment=comment)
   class(lib) <- "sage.library"
@@ -104,7 +104,7 @@ compute.unique.tags <- function(lib) {
 }
 
 remove.sage.artifacts <- function(lib, artifacts=c("Linker", "Ribosomal", "Mitochondrial"), ...) {
-  data(SAGEartifacts, envir=environment())
+  data("SAGEartifacts", envir=environment())
   if(lib$taglength == 10) { taglength <- "Short" } else { taglength <- "Long" }
   for(a in artifacts) {
     artifact.tags <- tolower(as.character(SAGEartifacts[as.character(SAGEartifacts[,2])==paste(taglength, a, sep=""), 1]))
@@ -171,7 +171,7 @@ extract.library.tags <- function(filelist, base.caller.format="phd", remove.dupl
                paste("# remove.low.quality:", remove.low.quality, sep=" "),
                paste("# min.ditag.length:", min.ditag.length, sep=" "),
                paste("# max.ditag.length:", max.ditag.length, sep=" "),
-               paste("# cut.site:", cut.site, sep=" "),
+               paste("# cut.site:", cut.site, sep=" ")
                )
   lib <- list(taglength=taglength, seqs=tags, comment=comment)
   class(lib) <- "sage.library"
@@ -466,7 +466,7 @@ sagelibrary.simulate<-function(taglength=4, lambda=1000, mean.error=0.01, error.
                paste("# seed:", libseed, sep=" "),
                paste("# mean.error:", mean.error, sep=" "),
                paste("# error.sd:", error.sd, sep=" "),
-               paste("# withintagerror.sd:", withintagerror.sd, sep=" "),
+               paste("# withintagerror.sd:", withintagerror.sd, sep=" ")
                )
   lib <- list(libname=libname, taglength=taglength, ntags=unique.tag.count, nseq=tagcount, tags=tags, seqs=seqs,
               count.table=ne, alpha.true=alpha, comment=comment, all.genes=genenames, prop.true=p, seed=libseed)
@@ -873,6 +873,6 @@ print.sage.library.comparison <- function(x, ...) {
           paste("# taglength:", x$taglength, sep=" "),
           x$comment, 
           "Fields:", paste(names(x), collapse=" "),
-          "contents of field 'data':", paste(names(x$data), collapse=" "),
+          "contents of field 'data':", paste(names(x$data), collapse=" ")
           ), "")
 }
