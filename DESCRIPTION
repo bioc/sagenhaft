@@ -1,5 +1,5 @@
 Package: sagenhaft
-Version: 1.7.2
+Version: 1.8.0
 Date: 2007-04-10
 Title: Collection of functions for reading and comparing SAGE
         libraries
@@ -7,7 +7,7 @@ Author: Tim Beissbarth <beissbarth@wehi.edu.au>, with contributions
         from Gordon Smyth <smyth@wehi.edu.au> and Lavinia Hyde
         <hyde@wehi.edu.au>.
 Maintainer: Tim Beissbarth <beissbarth@wehi.edu.au>
-Depends: R (>= 2.0), SparseM (>= 0.54)
+Depends: R (>= 2.5), SparseM (>= 0.73)
 Description: This package implements several functions useful for
         analysis of SAGE (Serial Analysis of Gene Expressen) data,
         i.e. extraction of a SAGE library from sequence files,
