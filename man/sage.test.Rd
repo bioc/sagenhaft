@@ -36,7 +36,7 @@ sage.test(x, y, n1=sum(x), n2=sum(y))
 \author{Gordon Smyth}
 
 \seealso{
-\code{\link[ctest]{fisher.test}}
+\code{\link[stats]{fisher.test}}
 }
 
 \examples{
