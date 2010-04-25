@@ -1,0 +1,18 @@
+import(methods)
+import(SparseM)
+importFrom(graphics, abline, legend, lines, par, plot, points)
+importFrom(stats, chisq.test, dbinom, pbinom, rlnorm, rpois, runif)
+importFrom(utils, data, read.table, write.table, zip.file.extract)
+
+export(combine.libs, compare.lib.pair, compute.sequence.neighbors,
+       compute.unique.tags, create.matrix.csr, difference.scatter.plot,
+       em.estimate.error.given, estimate.errors.mean, extract.ditags,
+       extract.lib.from.directory, extract.lib.from.zip, extract.library.tags,
+       plot.sage.library, plot.sage.library.comparison, print.sage.library,
+       print.sage.library.comparison, read.phd.file, read.sage.library,
+       read.sage.library.comparison, read.seq.qual.filepair,
+       reestimate.lib.from.tagcounts, remove.sage.artifacts, revcomp,
+       sage.test, sagelibrary.simulate, summary.sage.library,
+       summary.sage.library.comparison, table.sparse, tagmatrix2tagnum,
+       tagnum2tagmatrix, tagnum2tagsequence, tagsequence2tagnum,
+       write.sage.library, write.sage.library.comparison)

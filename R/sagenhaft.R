@@ -316,7 +316,6 @@ compute.sequence.neighbors <- function(tags, taglength=10, quality.scores=NULL, 
 
 em.estimate.error.given<-function(lib, maxstep=50, ...) {
 
-  library(SparseM)
   # initial complete data
   lambda <- sum(lib$nseq)
   m <- lib$tags[,"count.raw"]
@@ -780,7 +779,6 @@ create.matrix.csr <- function(values, row.indices, col.indices, dim=NULL, eps = 
   ia <- as.integer(row.indices[o])
   ja <- as.integer(col.indices[o])
   if(is.null(dim)) dim <- c(max(ia), max(ja))
-  library(SparseM)
   return(as.matrix.csr(new("matrix.coo", ra=ra, ia=ia, ja=ja, dimension=dim)))
 }
 

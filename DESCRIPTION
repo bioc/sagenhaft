@@ -7,7 +7,8 @@ Author: Tim Beissbarth <beissbarth@wehi.edu.au>, with contributions
         from Gordon Smyth <smyth@wehi.edu.au> and Lavinia Hyde
         <hyde@wehi.edu.au>.
 Maintainer: Tim Beissbarth <beissbarth@wehi.edu.au>
-Depends: R (>= 2.5), SparseM (>= 0.73)
+Depends: R (>= 2.5), SparseM (>= 0.73), methods
+Imports: graphics, methods, SparseM, stats, utils
 Description: This package implements several functions useful for
         analysis of SAGE (Serial Analysis of Gene Expressen) data,
         i.e. extraction of a SAGE library from sequence files,
