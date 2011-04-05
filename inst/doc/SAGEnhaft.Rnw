@@ -124,7 +124,7 @@ library(sagenhaft)
 
 \begin{Schunk}
 \begin{Sinput}
-> file.copy(system.file("data/E15postHFI.zip",package="sagenhaft"),
+> file.copy(system.file("extdata", "E15postHFI.zip", package="sagenhaft"),
 +          "E15postHFI.zip")
 > E15post<-extract.lib.from.zip("E15postHFI.zip", taglength=10,
 +                               min.ditag.length=20, max.ditag.length=24)
@@ -132,10 +132,10 @@ library(sagenhaft)
 \end{Schunk}
 
 <<>>=
-E15post <- read.sage.library(system.file("data/E15postHFI.sage",
+E15post <- read.sage.library(system.file("extdata", "E15postHFI.sage",
                             package="sagenhaft"))
 E15post
-B6Hypo <- read.sage.library(system.file("data/B6HypothalHFI.sage",
+B6Hypo <- read.sage.library(system.file("extdata", "B6HypothalHFI.sage",
                             package="sagenhaft")) 
 libcomp <- compare.lib.pair(B6Hypo, E15post)
 plot(libcomp)

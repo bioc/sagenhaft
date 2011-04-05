@@ -35,9 +35,9 @@ em.estimate.error.given(lib, maxstep=50, ...)
 
 \examples{
 library(sagenhaft)
-B6Hypo <-read.sage.library(system.file("data/B6HypothalHFI.sage",
+B6Hypo <-read.sage.library(system.file("data", "B6HypothalHFI.sage",
                            package="sagenhaft")) 
-E15post <- read.sage.library(system.file("data/E15postHFI.sage",
+E15post <- read.sage.library(system.file("data", "E15postHFI.sage",
                              package="sagenhaft")) 
 testlib <- combine.libs(B6Hypo, E15post)
 testlib <- estimate.errors.mean(testlib)

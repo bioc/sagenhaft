@@ -34,7 +34,7 @@ write.sage.library(x, file=paste(x$libname, "sage", sep="."),
 \seealso{\code{\link[sagenhaft:extract.lib]{extract.lib}}}
 \examples{
 library(sagenhaft)
-E15postHFI <- read.sage.library(system.file("data/E15postHFI.sage",
+E15postHFI <- read.sage.library(system.file("extdata", "E15postHFI.sage",
                                 package="sagenhaft")) 
 E15postHFI
 }
