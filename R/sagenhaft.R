@@ -104,6 +104,7 @@ compute.unique.tags <- function(lib) {
 }
 
 remove.sage.artifacts <- function(lib, artifacts=c("Linker", "Ribosomal", "Mitochondrial"), ...) {
+  SAGEartifacts=NULL
   data("SAGEartifacts", envir=environment())
   if(lib$taglength == 10) { taglength <- "Short" } else { taglength <- "Long" }
   for(a in artifacts) {

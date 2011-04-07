@@ -1,18 +1,22 @@
 Package: sagenhaft
-Version: 1.21.2
+Version: 1.21.3
 Date: 2007-04-10
 Title: Collection of functions for reading and comparing SAGE
         libraries
 Author: Tim Beissbarth <beissbarth@wehi.edu.au>, with contributions
         from Gordon Smyth <smyth@wehi.edu.au> and Lavinia Hyde
         <hyde@wehi.edu.au>.
+Reference: Beissbarth T, Hyde L, Smyth GK, Job C, Boon WM, Tan SS, Scott HS, Speed TP: Statistical modeling of sequencing errors in SAGE libraries, Bioinformatics, 2004 20(Suppl. 1):i31-9.
 Maintainer: Tim Beissbarth <beissbarth@wehi.edu.au>
-Depends: R (>= 2.5), SparseM (>= 0.73), methods
+Depends: R (>= 2.10), SparseM (>= 0.73), methods
 Imports: graphics, methods, SparseM, stats, utils
 Description: This package implements several functions useful for
-        analysis of SAGE (Serial Analysis of Gene Expressen) data,
+        analysis of gene expression data by sequencing tags as done in
+	SAGE (Serial Analysis of Gene Expressen) data,
         i.e. extraction of a SAGE library from sequence files,
-        sequence error correction, library comparison.
+        sequence error correction, library comparison. Sequencing error 
+	correction is implementing using an Expectation Maximization Algorithm
+	based on a Mixture Model of tag counts.
 biocViews: SAGE
 License: GPL (>= 2)
 URL: http://tagcalling.mbgproject.org
