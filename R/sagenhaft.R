@@ -11,7 +11,7 @@ extract.lib.from.zip <- function(zipfile, libname=sub(".zip","",basename(zipfile
   } else {
     unlink(tempdir(), recursive=TRUE)
     dir.create(tempdir())
-    tmpdir <- zip.file.extract("", zipfile)
+    tmpdir <- unzip(zipfile)
     lib <- extract.lib.from.directory(tmpdir, libname, ...)
     unlink(tmpdir, recursive=TRUE)
     dir.create(tempdir())

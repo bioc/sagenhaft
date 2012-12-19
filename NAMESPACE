@@ -2,7 +2,7 @@ import(methods)
 import(SparseM)
 importFrom(graphics, abline, legend, lines, par, plot, points)
 importFrom(stats, chisq.test, dbinom, pbinom, rlnorm, rpois, runif)
-importFrom(utils, data, read.table, write.table, zip.file.extract)
+importFrom(utils, data, read.table, write.table, unzip)
 
 export(combine.libs, compare.lib.pair, compute.sequence.neighbors,
        compute.unique.tags, create.matrix.csr, difference.scatter.plot,
