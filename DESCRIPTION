@@ -1,13 +1,13 @@
 Package: sagenhaft
-Version: 1.39.0
+Version: 1.39.1
 Date: 2007-04-10
 Title: Collection of functions for reading and comparing SAGE
         libraries
-Author: Tim Beissbarth <beissbarth@wehi.edu.au>, with contributions
+Author: Tim Beissbarth <tim.beissbarth@ams.med.uni-goettingen.de>, with contributions
         from Gordon Smyth <smyth@wehi.edu.au> and Lavinia Hyde
         <hyde@wehi.edu.au>.
 Reference: Beissbarth T, Hyde L, Smyth GK, Job C, Boon WM, Tan SS, Scott HS, Speed TP: Statistical modeling of sequencing errors in SAGE libraries, Bioinformatics, 2004 20(Suppl. 1):i31-9.
-Maintainer: Tim Beissbarth <beissbarth@wehi.edu.au>
+Maintainer: Tim Beissbarth <tim.beissbarth@ams.med.uni-goettingen.de>
 Depends: R (>= 2.10), SparseM (>= 0.73), methods
 Imports: graphics, methods, SparseM, stats, utils
 Description: This package implements several functions useful for
