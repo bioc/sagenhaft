@@ -1,15 +1,14 @@
 Package: sagenhaft
 Version: 1.57.0
-Date: 2007-04-10
-Title: Collection of functions for reading and comparing SAGE
-        libraries
-Author: Tim Beissbarth <tim.beissbarth@ams.med.uni-goettingen.de>, with contributions
-        from Gordon Smyth <smyth@wehi.edu.au> and Lavinia Hyde
-        <hyde@wehi.edu.au>.
-Reference: Beissbarth T, Hyde L, Smyth GK, Job C, Boon WM, Tan SS, Scott HS, Speed TP: Statistical modeling of sequencing errors in SAGE libraries, Bioinformatics, 2004 20(Suppl. 1):i31-9.
-Maintainer: Tim Beissbarth <tim.beissbarth@ams.med.uni-goettingen.de>
+Date: 2020-01-10
+Title: Collection of functions for reading and comparing SAGE libraries
+Author: Tim Beissbarth <tim.beissbarth@bioinf.med.uni-goettingen.de>, with contributions from Gordon Smyth <smyth@wehi.edu.au> 
+Reference: Beissbarth T, Hyde L, Smyth GK, Job C, Boon WM, Tan SS,
+        Scott HS, Speed TP: Statistical modeling of sequencing errors
+        in SAGE libraries, Bioinformatics, 2004 20(Suppl. 1):i31-9.
+Maintainer: Tim Beissbarth <tim.beissbarth@bioinf.med.uni-goettingen.de>
 Depends: R (>= 2.10), SparseM (>= 0.73), methods
-Imports: graphics, methods, SparseM, stats, utils
+Imports: graphics, stats, utils
 Description: This package implements several functions useful for
         analysis of gene expression data by sequencing tags as done in
 	SAGE (Serial Analysis of Gene Expressen) data,
@@ -19,5 +18,11 @@ Description: This package implements several functions useful for
 	based on a Mixture Model of tag counts.
 biocViews: SAGE
 License: GPL (>= 2)
-URL: http://tagcalling.mbgproject.org
-
+URL: http://www.bioinf.med.uni-goettingen.de
+git_url: https://git.bioconductor.org/packages/sagenhaft
+git_branch: RELEASE_3_10
+git_last_commit: c49299a
+git_last_commit_date: 2019-10-29
+Date/Publication: 2019-10-29
+NeedsCompilation: no
+Packaged: 2019-10-29 23:35:58 UTC; biocbuild

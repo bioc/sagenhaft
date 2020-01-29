@@ -688,7 +688,7 @@ sage.test <- function(x, y, n1=sum(x), n2=sum(y))
         isize <- mar0[ind,1]
         iprob <- mar0[ind,2]
         i <- (size == isize) & (prob==iprob) & n1 != n2
-        p <- dbinom(0:isize, p = (prob[i])[1], size = isize)
+        p <- dbinom(0:isize, prob = (prob[i])[1], size = isize)
         o <- order(p)
         cumsump <- cumsum(p[o])[order(o)]
         p.value[i] <- cumsump[x[i] + 1]
